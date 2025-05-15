@@ -1,0 +1,78 @@
+# XAMPP specific
+/xampp/
+/htdocs/
+/mysql/data/
+/apache/logs/
+/apache/conf/
+/php/php.ini
+/php/php.ini-development
+/php/php.ini-production
+
+# PHP specific
+/vendor/
+composer.lock
+.env
+.env.*
+!.env.example
+*.log
+error_log
+php_errors.log
+
+# IDE specific
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+.project
+.settings/
+.classpath
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Temporary files
+*.swp
+*.swo
+*~
+*.bak
+*.tmp
+*.temp
+
+# Cache and session files
+/cache/
+/sessions/
+*.cache
+*.session
+
+# Database backups and dumps
+*.sql
+*.sqlite
+*.db
+*.dump
+*.backup
+
+# Configuration files with sensitive data
+config/database.php
+config/*.local.php
+config/*.prod.php
+
+# Upload directories
+/uploads/
+/files/
+/media/
+
+# Build and dependency directories
+/node_modules/
+/dist/
+/build/
+/bower_components/
+
+# Test coverage
+/coverage/
+.phpunit.result.cache 
