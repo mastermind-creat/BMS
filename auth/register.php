@@ -51,14 +51,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         mysqli_stmt_close($stmt);
     }
     
-    // Insert new user
-    $sql = "INSERT INTO users (username, email, password, role) VALUES (?, ?, ?, 'staff')";
+    // Insert new user with pending status
+    $sql = "INSERT INTO users (username, email, password, role, approval_status) VALUES (?, ?, ?, 'staff', 'pending')";
     if($stmt = mysqli_prepare($conn, $sql)){
         $hashed_password = password_hash($password, PASSWORD_DEFAULT);
         mysqli_stmt_bind_param($stmt, "sss", $username, $email, $hashed_password);
         
         if(mysqli_stmt_execute($stmt)){
-            $_SESSION["success"] = "Registration successful! Please login.";
+            $_SESSION["success"] = "Registration successful! Please wait for admin approval before logging in.";
             header("location: ../index.php");
         } else {
             $_SESSION["error"] = "Something went wrong. Please try again later.";
